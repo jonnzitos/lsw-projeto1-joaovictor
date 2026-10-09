@@ -62,3 +62,12 @@ function cadastrarProduto(lista, nome, categoria, preco, quantidade) {
     lista.push(novoProduto);
     console.log(`Produto ${nome} cadastrado, agora a loja tem ${lista.length} produtos.`);
 }
+
+function valorEstoque(lista) {
+    let valorTotal = 0;
+    for (let i = 0; i < lista.length; i++) {
+        let produto = lista[i];
+        valorTotal += produto.preco * produto.quantidade;
+    }
+    return valorTotal;
+}
