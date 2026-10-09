@@ -138,3 +138,13 @@ function formatarNome(texto) {
     return primeiraLetra + restanteDoTexto;
 }
 
+function converterParaJSON(lista) {
+    return JSON.stringify(lista);
+}
+
+function lerJSON(texto) {
+    return JSON.parse(texto);
+}
+
+
+
