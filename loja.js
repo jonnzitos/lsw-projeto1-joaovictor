@@ -111,3 +111,18 @@ function aplicarDesconto(lista, categoria, percentual) {
         }
     }
 }
+
+function registrarVenda(lista, nome, quantidade) {
+    let produto = buscarProduto(lista, nome);
+
+    if (produto === false) {
+        return;
+    }
+    else if (produto.quantidade < quantidade) {
+        console.log(`Só possuem ${produto.quantidade} unidade(s) do produto.`);
+        return;
+    }
+    produto.quantidade -= quantidade;
+    produto.vendido += quantidade;
+    console.log(`Venda realizada! ${produto.quantidade} un. em estoque, ${produto.vendido} vendidos.`);
+}
