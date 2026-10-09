@@ -71,3 +71,16 @@ function valorEstoque(lista) {
     }
     return valorTotal;
 }
+
+function buscarProduto(lista, nome) {
+    for (let i = 0; i < lista.length; i++) {
+        let produto = lista[i];
+        if (produto.nome.toLowerCase() === nome.toLowerCase()) {
+            console.log(`Produto encontrado: ${produto.nome} | ${produto.categoria} | R$ ${produto.preco.toFixed(2)} | ${produto.quantidade} un. | ${produto.vendido} vendidos`);
+            return true;
+        }
+    }
+
+    console.log("Produto não encontrado.");
+    return false;
+}
