@@ -97,3 +97,17 @@ function produtosEmFalta(lista, minimo) {
     }
     return produtosFaltando;
 }
+
+let percentual = 10;
+let categoria = "Roupas";
+
+function aplicarDesconto(lista, categoria, percentual) {
+    for (let i = 0; i < lista.length; i++) {
+        let produto = lista[i];
+        if (produto.categoria.toLowerCase() === categoria.toLowerCase()) {
+            let novoPreco = produto.preco - (produto.preco * percentual / 100);
+            produto.preco = novoPreco;
+            console.log(`Novo preço do(a) ${produto.nome}:R$ ${novoPreco.toFixed(2)}`);
+        }
+    }
+}
