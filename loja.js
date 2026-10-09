@@ -84,3 +84,16 @@ function buscarProduto(lista, nome) {
     console.log("Produto não encontrado.");
     return false;
 }
+
+let minimo = 5;
+
+function produtosEmFalta(lista, minimo) {
+    let produtosFaltando = [];
+    for (let i = 0; i < lista.length; i++) {
+        let produto = lista[i];
+        if (produto.quantidade < minimo) {
+            produtosFaltando.push(produto);
+        }
+    }
+    return produtosFaltando;
+}
