@@ -126,3 +126,15 @@ function registrarVenda(lista, nome, quantidade) {
     produto.vendido += quantidade;
     console.log(`Venda realizada! ${produto.quantidade} un. em estoque, ${produto.vendido} vendidos.`);
 }
+
+function formatarNome(texto) {
+    texto = texto.trim();
+    if (texto.length === 0) {
+        return texto;
+    }
+
+    let primeiraLetra = texto[0].toUpperCase();
+    let restanteDoTexto = texto.slice(1).toLowerCase();
+    return primeiraLetra + restanteDoTexto;
+}
+
